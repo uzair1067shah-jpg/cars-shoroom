@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Apex Luxury Motors Showroom & Dealership</title>
+  <meta name="description" content="Learn about Apex Luxury Motors' heritage, certified exotic supercar curation, master technicians, and 15+ years of luxury car showroom excellence." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ==================== STICKY NAVBAR ==================== -->
+  <header class="navbar scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+        APEX <span>LUXURY MOTORS</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="cars.html" class="nav-link">Cars</a>
+        <a href="index.html#brands-section" class="nav-link">Brands</a>
+        <a href="about.html" class="nav-link active">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="cars.html" class="nav-favorite-btn" title="View Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="fav-badge">0</span>
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="openTestDriveModal()">Book Showroom Visit</button>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="cars.html" class="mobile-nav-link">Inventory</a>
+      <a href="about.html" class="mobile-nav-link active">About Showroom</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </div>
+    <button class="btn btn-primary" onclick="openTestDriveModal(); document.querySelector('.mobile-nav').classList.remove('active');">
+      <i class="fa-solid fa-car"></i> Book Showroom Visit
+    </button>
+  </div>
+
+  <!-- ==================== ABOUT HERO ==================== -->
+  <section class="section-padding" style="padding-top: 8.5rem; background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 60%); text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-subtitle"><i class="fa-solid fa-gem"></i> Heritage &amp; Excellence</span>
+      <h1 class="section-title" style="font-size: 3.5rem;">Redefining Luxury Automotive Acquisition</h1>
+      <p class="section-description">For over 15 years, Apex Luxury Motors has curated the world's most sought-after supercars, hypercars, and luxury vehicles for discerning collectors and enthusiasts.</p>
+    </div>
+  </section>
+
+  <!-- ==================== OUR STORY ==================== -->
+  <section class="section-padding" style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <span class="section-subtitle"><i class="fa-solid fa-building"></i> Our Philosophy</span>
+          <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem;" class="text-gradient">Where Passion Meets Automotive Precision</h2>
+          <p style="color: var(--text-sub); margin-bottom: 1.25rem;">Founded by racing enthusiasts and private collectors, Apex Luxury Motors was born out of a desire to eliminate traditional high-pressure dealership tactics in favor of a private VIP showroom experience.</p>
+          <p style="color: var(--text-muted); margin-bottom: 2rem;">Every vehicle in our showroom is personally inspected, provenanced, and prepped to concours competition standards before being listed.</p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div style="background: var(--bg-dark); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.25rem;">100% Provenance</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Verified title, history & maintenance records</p>
+            </div>
+            <div style="background: var(--bg-dark); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.25rem;">White-Glove VIP</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Private showroom lounge &amp; delivery</p>
+            </div>
+          </div>
+        </div>
+        
+        <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-gold); box-shadow: var(--shadow-lg);">
+          <img src="https://images.unsplash.com/photo-1562141961-b5d1b608888b?auto=format&fit=crop&w=1000&q=80" alt="Apex Luxury Showroom Lounge" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ANIMATED STATS ==================== -->
+  <section class="section-padding" style="background: #080A0F;">
+    <div class="container">
+      <div class="hero-stats" style="border: none; padding-top: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+        <div class="stat-item">
+          <h3 class="counter-val" data-target="2500">0</h3>
+          <p>Supercars Sold</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="counter-val" data-target="99">0</h3>
+          <p>Client Satisfaction %</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="counter-val" data-target="15">0</h3>
+          <p>Years in Business</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="counter-val" data-target="42">0</h3>
+          <p>Industry Awards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LEADERSHIP TEAM ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-users-gear"></i> Leadership</span>
+        <h2 class="section-title">Meet Our Automotive Specialists</h2>
+        <p class="section-description">Our team consists of former racing drivers, master technicians, and private wealth vehicle advisors.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; text-align: center; padding: 2rem;">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Jonathan Vance" style="width: 140px; height: 140px; border-radius: var(--radius-full); object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid var(--accent-gold);" />
+          <h3 style="font-size: 1.4rem;">Jonathan Vance</h3>
+          <p style="color: var(--accent-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">Founder &amp; Managing Director</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Former GT3 endurance driver with 20+ years of exotic automobile acquisition expertise.</p>
+        </div>
+        
+        <div style="background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; text-align: center; padding: 2rem;">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Victoria Sterling" style="width: 140px; height: 140px; border-radius: var(--radius-full); object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid var(--accent-gold);" />
+          <h3 style="font-size: 1.4rem;">Victoria Sterling</h3>
+          <p style="color: var(--accent-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">VP of Private Client Relations</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Specializes in rare supercar sourcing and bespoke international collection management.</p>
+        </div>
+        
+        <div style="background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; text-align: center; padding: 2rem;">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Hans Miller" style="width: 140px; height: 140px; border-radius: var(--radius-full); object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid var(--accent-gold);" />
+          <h3 style="font-size: 1.4rem;">Hans Miller</h3>
+          <p style="color: var(--accent-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">Master Porsche &amp; AMG Technician</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Certified master engineer ensuring every vehicle meets factory race-ready tolerances.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+            APEX <span>MOTORS</span>
+          </a>
+          <p>The premier global destination for certified exotic supercars, luxury sedans, and high-performance hypercars.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="cars.html" class="footer-link">Explore Cars</a></li>
+            <li><a href="about.html" class="footer-link">About Showroom</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="cars.html?type=Sports+Cars" class="footer-link">Sports Cars</a></li>
+            <li><a href="cars.html?type=Luxury+Cars" class="footer-link">Luxury Sedans</a></li>
+            <li><a href="cars.html?type=SUVs" class="footer-link">Exotic SUVs</a></li>
+            <li><a href="cars.html?type=Electric+Cars" class="footer-link">Electric Supercars</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Showroom Hours</h4>
+          <ul class="footer-links">
+            <li><span style="color: var(--text-sub);">Mon - Fri:</span> 9:00 AM - 8:00 PM</li>
+            <li><span style="color: var(--text-sub);">Saturday:</span> 10:00 AM - 6:00 PM</li>
+            <li><span style="color: var(--text-sub);">Sunday:</span> Private VIP Appointment</li>
+            <li style="margin-top: 1rem;"><a href="tel:+18005552739" class="text-gold" style="font-weight: 700;"><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Luxury Motors Dealership. All Rights Reserved.</p>
+        <p>Built with Luxury &amp; Excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

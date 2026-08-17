@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory & Smart Search - Apex Luxury Motors</title>
+  <meta name="description" content="Browse our luxury showroom inventory of exotic sports cars, high-end sedans, and performance SUVs for sale. Filter by brand, price, transmission, fuel type, and horsepower." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ==================== STICKY NAVBAR ==================== -->
+  <header class="navbar scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+        APEX <span>LUXURY MOTORS</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="cars.html" class="nav-link active">Cars</a>
+        <a href="index.html#brands-section" class="nav-link">Brands</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="cars.html" class="nav-favorite-btn" title="View Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="fav-badge">0</span>
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="openTestDriveModal()">Book Showroom Visit</button>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="cars.html" class="mobile-nav-link active">Inventory</a>
+      <a href="about.html" class="mobile-nav-link">About Showroom</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </div>
+    <button class="btn btn-primary" onclick="openTestDriveModal(); document.querySelector('.mobile-nav').classList.remove('active');">
+      <i class="fa-solid fa-car"></i> Book Showroom Visit
+    </button>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <section class="section-padding" style="padding-top: 8.5rem; padding-bottom: 2rem; background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 70%);">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="section-subtitle"><i class="fa-solid fa-sliders"></i> Smart Search</span>
+        <h1 class="section-title">Showroom Inventory</h1>
+        <p class="section-description">Filter our authenticated collection of luxury and high-performance supercars.</p>
+      </div>
+      
+      <!-- Smart Car Search & Filter Interface -->
+      <div class="filter-wrapper">
+        <div class="filter-grid">
+          <div class="filter-group" style="grid-column: 1 / -1;">
+            <label class="filter-label">Search Keyword</label>
+            <div style="position: relative;">
+              <input type="text" id="search-keyword" class="filter-input" placeholder="Search by model, brand (e.g., Porsche 911, AMG, V8, Electric)..." style="padding-left: 2.75rem;" />
+              <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--accent-gold);"></i>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Brand</label>
+            <select id="filter-brand" class="filter-select">
+              <option value="">All Brands</option>
+              <option value="Porsche">Porsche</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes-Benz">Mercedes-Benz</option>
+              <option value="Audi">Audi</option>
+              <option value="Land Rover">Land Rover</option>
+              <option value="Lamborghini">Lamborghini</option>
+              <option value="Lexus">Lexus</option>
+              <option value="Ferrari">Ferrari</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Bentley">Bentley</option>
+              <option value="Aston Martin">Aston Martin</option>
+              <option value="Rolls-Royce">Rolls-Royce</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Category</label>
+            <select id="filter-type" class="filter-select">
+              <option value="">All Types</option>
+              <option value="Sports Cars">Sports Cars</option>
+              <option value="Luxury Cars">Luxury Cars</option>
+              <option value="SUVs">SUVs</option>
+              <option value="Electric Cars">Electric Cars</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Fuel Type</label>
+            <select id="filter-fuel" class="filter-select">
+              <option value="">All Fuel Types</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Electric">Electric</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Transmission</label>
+            <select id="filter-transmission" class="filter-select">
+              <option value="">All Transmissions</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Dual-Clutch">Dual-Clutch</option>
+            </select>
+          </div>
+          
+          <div class="filter-group price-range-wrap">
+            <div class="filter-label" style="display: flex; justify-content: space-between;">
+              <span>Max Price</span>
+              <span id="price-display" style="color: var(--accent-gold); font-weight: 700;">$400,000</span>
+            </div>
+            <input type="range" id="filter-price" min="80000" max="400000" step="10000" value="400000" />
+          </div>
+          
+          <div class="filter-actions">
+            <button id="reset-filters" class="btn btn-secondary btn-sm"><i class="fa-solid fa-rotate-left"></i> Reset Filters</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Results Counter Bar -->
+      <div class="results-bar">
+        <div id="results-count" class="results-count">Showing <span>12</span> luxury vehicles</div>
+      </div>
+      
+      <!-- Inventory Grid -->
+      <div id="inventory-grid" class="car-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+            APEX <span>MOTORS</span>
+          </a>
+          <p>The premier global destination for certified exotic supercars, luxury sedans, and high-performance hypercars.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="cars.html" class="footer-link">Explore Cars</a></li>
+            <li><a href="about.html" class="footer-link">About Showroom</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="cars.html?type=Sports+Cars" class="footer-link">Sports Cars</a></li>
+            <li><a href="cars.html?type=Luxury+Cars" class="footer-link">Luxury Sedans</a></li>
+            <li><a href="cars.html?type=SUVs" class="footer-link">Exotic SUVs</a></li>
+            <li><a href="cars.html?type=Electric+Cars" class="footer-link">Electric Supercars</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Showroom Hours</h4>
+          <ul class="footer-links">
+            <li><span style="color: var(--text-sub);">Mon - Fri:</span> 9:00 AM - 8:00 PM</li>
+            <li><span style="color: var(--text-sub);">Saturday:</span> 10:00 AM - 6:00 PM</li>
+            <li><span style="color: var(--text-sub);">Sunday:</span> Private VIP Appointment</li>
+            <li style="margin-top: 1rem;"><a href="tel:+18005552739" class="text-gold" style="font-weight: 700;"><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Luxury Motors Dealership. All Rights Reserved.</p>
+        <p>Built with Luxury &amp; Excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Handle URL parameters for preset filters (e.g. ?brand=Porsche or ?type=SUVs)
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const presetBrand = urlParams.get('brand');
+      const presetType = urlParams.get('type');
+      
+      if (presetBrand) {
+        const brandSelect = document.getElementById('filter-brand');
+        if (brandSelect) {
+          brandSelect.value = presetBrand;
+          brandSelect.dispatchEvent(new Event('input'));
+        }
+      }
+      
+      if (presetType) {
+        const typeSelect = document.getElementById('filter-type');
+        if (typeSelect) {
+          typeSelect.value = presetType;
+          typeSelect.dispatchEvent(new Event('input'));
+        }
+      }
+    });
+  </script>
+</body>
+</html>

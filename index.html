@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Luxury Motors - Exclusive Exotic Car Showroom & Dealership</title>
+  <meta name="description" content="Experience peak automotive luxury with Apex Luxury Motors. Explore certified exotic supercars, luxury SUVs, hypercars, and electric vehicles for sale with VIP concierge service." />
+  
+  <!-- CSS Stylesheet & FontAwesome -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ==================== STICKY NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+        APEX <span>LUXURY MOTORS</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="cars.html" class="nav-link">Cars</a>
+        <a href="cars.html#brands-section" class="nav-link">Brands</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="btn btn-outline-gold btn-sm" onclick="openWelcomeOverlay()" title="View 3D BMW Welcome Experience">
+          <i class="fa-solid fa-cube"></i> 3D Welcome
+        </button>
+        <a href="cars.html" class="nav-favorite-btn" title="View Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="fav-badge">0</span>
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="openTestDriveModal()">Book Showroom Visit</button>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="cars.html" class="mobile-nav-link">Inventory</a>
+      <a href="about.html" class="mobile-nav-link">About Showroom</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </div>
+    <button class="btn btn-primary" onclick="openTestDriveModal(); document.querySelector('.mobile-nav').classList.remove('active');">
+      <i class="fa-solid fa-car"></i> Book Showroom Visit
+    </button>
+  </div>
+
+  <!-- ==================== 3D BLACK BMW WELCOME OVERLAY MODAL ==================== -->
+  <div class="welcome-3d-overlay active" id="welcome-3d-overlay">
+    <div class="welcome-3d-modal-container">
+      <div class="welcome-3d-card" id="interactive-3d-welcome">
+        <button class="welcome-close-btn" onclick="closeWelcomeOverlay()" title="Close Welcome Screen">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="welcome-3d-header">
+          <div class="welcome-badge">
+            <span class="badge-pulse"></span>
+            <i class="fa-solid fa-crown"></i> 3D VIP SHOWROOM WELCOME
+          </div>
+          <h2 class="welcome-3d-title">Welcome to <span class="shimmer-text">Apex Luxury Motors</span></h2>
+          <p class="welcome-3d-subtitle">Step into our exclusive 3D showroom featuring the pinnacle of BMW M-Series &amp; Exotic Supercars.</p>
+        </div>
+
+        <div class="welcome-3d-box-container">
+          <div class="welcome-3d-stage">
+            <div class="welcome-3d-podium-light"></div>
+            <img src="assets/images/bmw_3d_welcome.jpg" alt="3D BMW Luxury Supercar" class="welcome-3d-bmw-img" />
+            
+            <!-- 3D Floating Feature Pills -->
+            <div class="welcome-spec-pill pill-1">
+              <i class="fa-solid fa-bolt text-gold"></i>
+              <span>BMW M8 Competition</span>
+            </div>
+            <div class="welcome-spec-pill pill-2">
+              <i class="fa-solid fa-gauge-high text-gold"></i>
+              <span>617 HP Twin-Turbo V8</span>
+            </div>
+            <div class="welcome-spec-pill pill-3">
+              <i class="fa-solid fa-trophy text-gold"></i>
+              <span>3.0s 0-60 MPH</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome-3d-actions">
+          <button class="btn btn-primary btn-lg" onclick="closeWelcomeOverlay()">
+            <i class="fa-solid fa-door-open"></i> Enter 3D Showroom
+          </button>
+          <a href="cars.html?brand=BMW" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-car-side"></i> Explore BMW Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HERO SECTION (3D LUXURY SHOWROOM) ==================== -->
+  <section class="hero">
+    <div class="hero-ambient-spotlight"></div>
+    <div class="container hero-container">
+      
+      <!-- Left Content Column -->
+      <div class="hero-content">
+        <!-- Animated Badge -->
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          <i class="fa-solid fa-shield-halved"></i> CERTIFIED EXOTIC SHOWROOM
+        </div>
+
+        <!-- Dynamic Headline with Shimmer -->
+        <h1 class="hero-title anim-slide-up">
+          Explore &amp; Own Your<br/>
+          <span class="hero-title-highlight">
+            <span class="shimmer-text">Dream Supercar</span>
+          </span> Today
+        </h1>
+
+        <!-- Gold Accent Divider -->
+        <div class="hero-gold-line"></div>
+
+        <p class="hero-description anim-slide-up delay-1">Discover an uncompromised collection of hypercars, luxury sports sedans, exotic SUVs, and high-performance electric vehicles available for purchase in our premier showroom.</p>
+        
+        <!-- Quick Specs Ticker -->
+        <div class="hero-specs-ticker anim-slide-up delay-2">
+          <div class="ticker-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>0-60 in 1.99s</span>
+          </div>
+          <div class="ticker-divider"></div>
+          <div class="ticker-item">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Up to 1,020 HP</span>
+          </div>
+          <div class="ticker-divider"></div>
+          <div class="ticker-item">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <span>12 Exotics</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions anim-slide-up delay-3">
+          <a href="cars.html" class="btn btn-hero-primary btn-lg">
+            <span class="btn-shine"></span>
+            <i class="fa-solid fa-compass"></i> Explore Inventory
+          </a>
+          <button class="btn btn-hero-secondary btn-lg" onclick="openTestDriveModal()">
+            <i class="fa-solid fa-calendar-check"></i> Book Showroom Visit
+          </button>
+        </div>
+
+        <!-- Price Tag -->
+        <div class="hero-price-tag anim-slide-up delay-4">
+          <span class="price-label">Starting From</span>
+          <span class="price-value">$89,990</span>
+          <i class="fa-solid fa-arrow-right price-arrow"></i>
+        </div>
+        
+        <!-- Stats -->
+        <div class="hero-stats anim-slide-up delay-5">
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fa-solid fa-car-side"></i></div>
+            <div>
+              <h3 class="counter-val" data-target="2500">0</h3>
+              <p>VEHICLES DELIVERED</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <div>
+              <h3 class="counter-val" data-target="99">0</h3>
+              <p>SATISFACTION %</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+              <h3 class="counter-val" data-target="15">0</h3>
+              <p>YEARS EXPERIENCE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side 3D Automotive Visual Showcase -->
+      <div class="hero-3d-visual-wrap">
+        <div class="hero-3d-glow-podium"></div>
+        <div class="hero-3d-image-box">
+          <img src="assets/images/hero_3d_supercar.jpg" alt="Exotic 3D Supercar on Glowing Podium" class="hero-3d-car-img" />
+          <div class="blend-overlay fade-left"></div>
+          <div class="blend-overlay fade-right"></div>
+          <div class="blend-overlay fade-top"></div>
+          <div class="blend-overlay fade-bottom"></div>
+          <div class="blend-overlay fade-radial"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED CARS ==================== -->
+  <section class="section-padding featured-showroom-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-star"></i> Handpicked Collection</span>
+        <h2 class="section-title">Featured Supercars</h2>
+        <p class="section-description">Hand-certified exotic automobiles available in our luxury showroom, engineered for supreme power, unrivaled comfort, and prestige.</p>
+      </div>
+      
+      <div id="featured-cars-grid" class="car-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+      
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="cars.html" class="btn btn-outline-gold btn-lg"><i class="fa-solid fa-arrow-right"></i> View Full Showroom Inventory</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BROWSE BY BRAND ==================== -->
+  <section id="brands-section" class="section-padding" style="background: #080A0F; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-car-side"></i> Elite Manufactures</span>
+        <h2 class="section-title">Browse By Prestige Brand</h2>
+        <p class="section-description">Select from the world's most iconic luxury and motorsport car manufacturers.</p>
+      </div>
+      
+      <div class="brand-grid">
+
+        <a href="cars.html?brand=Porsche" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 80" fill="currentColor">
+              <path d="M50 5C28.5 5 11 18 11 34c0 10.5 7.5 19.8 19 25.5V70h8V62c3.8 1 7.8 1.5 12 1.5s8.2-.5 12-1.5v8h8v-10.5c11.5-5.7 19-15 19-25.5C89 18 71.5 5 50 5zm0 8c17.7 0 32 9.5 32 21s-14.3 21-32 21-32-9.5-32-21S32.3 13 50 13zm-8 8v26h4V29h8c4.4 0 8 2.7 8 6s-3.6 6-8 6h-4v4h4c6.6 0 12-4.5 12-10s-5.4-10-12-10H42z"/>
+            </svg>
+          </div>
+          <span class="brand-name">Porsche</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=BMW" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="5"/>
+              <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="3"/>
+              <line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" stroke-width="3"/>
+              <path d="M50 5 A45 45 0 0 1 95 50 L50 50Z" fill="rgba(56,189,248,0.35)"/>
+              <path d="M5 50 A45 45 0 0 1 50 95 L50 50Z" fill="rgba(56,189,248,0.35)"/>
+              <text x="50" y="58" text-anchor="middle" font-size="18" font-weight="800" font-family="Arial" fill="currentColor">BMW</text>
+            </svg>
+          </div>
+          <span class="brand-name">BMW</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Mercedes-Benz" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+              <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="4"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="2"/>
+              <line x1="50" y1="12" x2="50" y2="50" stroke="currentColor" stroke-width="4"/>
+              <line x1="50" y1="50" x2="17" y2="78" stroke="currentColor" stroke-width="4"/>
+              <line x1="50" y1="50" x2="83" y2="78" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <span class="brand-name">Mercedes-Benz</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Audi" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 160 60" fill="none" stroke="currentColor" stroke-width="4">
+              <circle cx="30" cy="30" r="20"/>
+              <circle cx="60" cy="30" r="20"/>
+              <circle cx="90" cy="30" r="20"/>
+              <circle cx="120" cy="30" r="20"/>
+            </svg>
+          </div>
+          <span class="brand-name">Audi</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Ferrari" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+              <rect x="15" y="8" width="70" height="84" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+              <rect x="30" y="2" width="40" height="10" rx="2" fill="currentColor"/>
+              <path d="M50 25c-8 0-15 3-15 3v35s5-2 10 0c3 1 5 5 5 8v8h0v-8c0-3 2-7 5-8 5-2 10 0 10 0V28s-7-3-15-3z" fill="currentColor" opacity="0.85"/>
+              <text x="50" y="95" text-anchor="middle" font-size="11" font-weight="800" font-family="Arial" fill="currentColor">S.F.</text>
+            </svg>
+          </div>
+          <span class="brand-name">Ferrari</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Lamborghini" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+              <polygon points="50,5 95,50 50,95 5,50" fill="none" stroke="currentColor" stroke-width="3"/>
+              <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M50 32c-3 0-5 1-5 1v14s2-1 5-1 5 1 5 1V33s-2-1-5-1z"/>
+              <path d="M40 50h20v3c0 6-4 13-10 16-6-3-10-10-10-16v-3z"/>
+              <circle cx="50" cy="42" r="3"/>
+            </svg>
+          </div>
+          <span class="brand-name">Lamborghini</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Tesla" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+              <path d="M50 10L50 90" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <path d="M50 10C50 10 25 10 15 20" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M50 10C50 10 75 10 85 20" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M20 15C20 15 40 5 50 5C60 5 80 15 80 15" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <span class="brand-name">Tesla</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+        <a href="cars.html?brand=Land Rover" class="brand-card">
+          <div class="brand-logo-wrap">
+            <svg class="brand-logo-svg" viewBox="0 0 140 60" fill="currentColor">
+              <ellipse cx="70" cy="30" rx="65" ry="25" fill="none" stroke="currentColor" stroke-width="3"/>
+              <text x="70" y="27" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial" letter-spacing="3" fill="currentColor">RANGE</text>
+              <text x="70" y="42" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial" letter-spacing="3" fill="currentColor">ROVER</text>
+            </svg>
+          </div>
+          <span class="brand-name">Range Rover</span>
+          <span class="brand-count">1 Model</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CAR CATEGORIES ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-layer-group"></i> Body Styles</span>
+        <h2 class="section-title">Explore Car Categories</h2>
+        <p class="section-description">Filter through our bespoke catalog tailored to your driving personality.</p>
+      </div>
+      
+      <div class="category-grid">
+        <a href="cars.html?type=Sports+Cars" class="category-card">
+          <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Sports Cars" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-flag-checkered"></i></span>
+            <h3 class="category-title">Sports Cars</h3>
+            <span class="category-count">4 Models Available</span>
+          </div>
+        </a>
+        <a href="cars.html?type=Luxury+Cars" class="category-card">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="Luxury Cars" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-gem"></i></span>
+            <h3 class="category-title">Luxury Sedans</h3>
+            <span class="category-count">4 Models Available</span>
+          </div>
+        </a>
+        <a href="cars.html?type=SUVs" class="category-card">
+          <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="Luxury SUVs" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+            <h3 class="category-title">Exotic SUVs</h3>
+            <span class="category-count">2 Models Available</span>
+          </div>
+        </a>
+        <a href="cars.html?type=Electric+Cars" class="category-card">
+          <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Electric Vehicles" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-bolt"></i></span>
+            <h3 class="category-title">EV Performance</h3>
+            <span class="category-count">2 Models Available</span>
+          </div>
+        </a>
+        <a href="cars.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="Grand Tourers" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-road"></i></span>
+            <h3 class="category-title">Grand Tourers</h3>
+            <span class="category-count">3 Models Available</span>
+          </div>
+        </a>
+        <a href="cars.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Convertibles" loading="lazy" />
+          <div class="category-card-overlay">
+            <span class="cat-icon"><i class="fa-solid fa-wind"></i></span>
+            <h3 class="category-title">Convertibles</h3>
+            <span class="category-count">2 Models Available</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="section-padding" style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-award"></i> The Apex Guarantee</span>
+        <h2 class="section-title">Why Choose Apex Motors</h2>
+        <p class="section-description">We set the global gold standard in luxury automobile acquisition and white-glove customer care.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <h3 class="benefit-title">150-Point Certified Inspection</h3>
+          <p class="benefit-desc">Every vehicle undergoes rigorous mechanical diagnostic verification by master factory-trained technicians.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-calculator"></i></div>
+          <h3 class="benefit-title">Tailored Bespoke Financing</h3>
+          <p class="benefit-desc">Competitive low-rate lease & purchase solutions custom structured with institutional private banks.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h3 class="benefit-title">Worldwide Enclosed Transport</h3>
+          <p class="benefit-desc">White-glove covered flatbed delivery directly to your home garage or international estate.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3 class="benefit-title">Comprehensive Warranty</h3>
+          <p class="benefit-desc">Full mechanical coverage included on all certified inventory with 24/7 VIP roadside concierge assistance.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="benefit-title">Transparent Market Pricing</h3>
+          <p class="benefit-desc">No hidden dealer markup fees or inflated add-ons. Clear, honest pricing on every luxury title.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3 class="benefit-title">Dedicated Private Concierge</h3>
+          <p class="benefit-desc">Your single point of contact for service maintenance, track prep, and car collection curation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINANCING QUICK SECTION ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="calc-container">
+        <div class="calc-grid">
+          <div class="calc-form">
+            <span class="section-subtitle"><i class="fa-solid fa-calculator"></i> Instant Estimator</span>
+            <h2 style="font-size: 2.2rem;">Calculate Monthly Payments</h2>
+            <p style="color: var(--text-muted);">Estimate your monthly financing terms dynamically.</p>
+            
+            <div class="form-group">
+              <label class="form-label">Vehicle Price ($)</label>
+              <input type="number" id="calc-price" class="form-control" value="150000" step="5000" />
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Down Payment ($)</label>
+                <input type="number" id="calc-down" class="form-control" value="30000" step="1000" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Loan Term (Months)</label>
+                <select id="calc-term" class="form-control">
+                  <option value="36">36 Months (3 Yrs)</option>
+                  <option value="48">48 Months (4 Yrs)</option>
+                  <option value="60" selected>60 Months (5 Yrs)</option>
+                  <option value="72">72 Months (6 Yrs)</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Interest Rate (%)</label>
+              <input type="number" id="calc-rate" class="form-control" value="4.9" step="0.1" />
+            </div>
+          </div>
+          
+          <div class="calc-result-box">
+            <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Estimated Monthly Payment</p>
+            <div id="calc-output-monthly" class="calc-monthly-amount">$2,256</div>
+            <p style="color: var(--text-sub); margin-bottom: 2rem;">Total Estimated Investment: <strong id="calc-output-total" class="text-gold">$165,360</strong></p>
+            <button class="btn btn-primary" onclick="openTestDriveModal()"><i class="fa-solid fa-paper-plane"></i> Apply For Financing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CUSTOMER REVIEWS ==================== -->
+  <section class="section-padding" style="background: #080A0F; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fa-solid fa-comments"></i> Client Testimonials</span>
+        <h2 class="section-title">What Collectors Say</h2>
+        <p class="section-description">Hear directly from automotive enthusiasts and luxury car owners worldwide.</p>
+      </div>
+      
+      <div class="reviews-slider-wrap">
+        <div class="reviews-track">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Apex Automotive delivered my Porsche 911 GT3 RS directly to my residence in spotless condition. The white-glove service and attention to track specification detail were second to none."</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client Avatar" class="author-img" />
+              <div>
+                <h4 class="author-name">Alexander Wright</h4>
+                <span class="author-car">Purchased 2024 Porsche 911 GT3 RS</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The entire buying experience for my AMG GT Black Series was smooth, transparent, and completely private. Their private financing concierge structured terms effortlessly."</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client Avatar" class="author-img" />
+              <div>
+                <h4 class="author-name">Marcus Sterling</h4>
+                <span class="author-car">Purchased 2023 Mercedes-AMG GT</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Finding an authentic Ferrari Roma in pristine condition was tough until I contacted Apex. Outstanding customer support and genuine automotive passion."</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Client Avatar" class="author-img" />
+              <div>
+                <h4 class="author-name">Elena Rostova</h4>
+                <span class="author-car">Purchased 2024 Ferrari Roma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider-controls">
+          <button class="slider-btn" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="slider-btn" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-badge"><i class="fa-solid fa-crown"></i></div>
+            APEX <span>MOTORS</span>
+          </a>
+          <p>The premier global destination for certified exotic supercars, luxury sedans, and high-performance hypercars.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="cars.html" class="footer-link">Explore Cars</a></li>
+            <li><a href="about.html" class="footer-link">About Showroom</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="cars.html?type=Sports+Cars" class="footer-link">Sports Cars</a></li>
+            <li><a href="cars.html?type=Luxury+Cars" class="footer-link">Luxury Sedans</a></li>
+            <li><a href="cars.html?type=SUVs" class="footer-link">Exotic SUVs</a></li>
+            <li><a href="cars.html?type=Electric+Cars" class="footer-link">Electric Supercars</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Showroom Hours</h4>
+          <ul class="footer-links">
+            <li><span style="color: var(--text-sub);">Mon - Fri:</span> 9:00 AM - 8:00 PM</li>
+            <li><span style="color: var(--text-sub);">Saturday:</span> 10:00 AM - 6:00 PM</li>
+            <li><span style="color: var(--text-sub);">Sunday:</span> Private VIP Appointment</li>
+            <li style="margin-top: 1rem;"><a href="tel:+18005552739" class="text-gold" style="font-weight: 700;"><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Luxury Motors Dealership. All Rights Reserved.</p>
+        <p>Built with Luxury &amp; Excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
