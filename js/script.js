@@ -359,9 +359,9 @@ const CARS_DATA = [
     topSpeed: "170 mph",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1621993202323-f438eec934ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1618245472463-b30f63602796?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1598533816694-814d6428c464?auto=format&fit=crop&w=1200&q=80"
     ],
     description: "The ultimate hot hatch, refined by legendary tuner Mugen. Featuring lightweight forged wheels, custom carbon fiber aero package, and track-tuned adaptive damper system.",
     features: {
