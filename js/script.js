@@ -359,7 +359,7 @@ const CARS_DATA = [
     topSpeed: "170 mph",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1621993202323-f438eec934ff?auto=format&fit=crop&w=1200&q=80",
+      "assets/images/honda_civic.png",
       "https://images.unsplash.com/photo-1618245472463-b30f63602796?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1598533816694-814d6428c464?auto=format&fit=crop&w=1200&q=80"
     ],
