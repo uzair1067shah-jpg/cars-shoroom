@@ -340,6 +340,34 @@ const CARS_DATA = [
       interior: ["Starlight Headliner with Shooting Stars", "Effortless Power Doors", "Rear Suite Champagne Cooler", "Besopke Audio System", "Lambswool Footmats"],
       safety: ["Flagbearer Vision System", "360 Surround View", "Active Cruise Control", "Vision Assist with Pedestrian Detection"]
     }
+  },
+  {
+    id: 13,
+    name: "Honda Civic Type R Mugen",
+    brand: "Honda",
+    model: "Civic Type R",
+    year: 2024,
+    price: 84500,
+    type: "Sports Cars",
+    fuel: "Petrol",
+    transmission: "Manual",
+    mileage: "800 mi",
+    engine: "2.0L Turbocharged Inline-4",
+    horsepower: "315 hp",
+    torque: "420 Nm",
+    acceleration: "5.3s (0-60 mph)",
+    topSpeed: "170 mph",
+    featured: true,
+    images: [
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1621993202323-f438eec934ff?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    description: "The ultimate hot hatch, refined by legendary tuner Mugen. Featuring lightweight forged wheels, custom carbon fiber aero package, and track-tuned adaptive damper system.",
+    features: {
+      interior: ["Mugen Bucket Racing Seats", "Alcantara Steering Wheel", "Carbon Fiber Shift Knob", "Data Log R System"],
+      safety: ["Brembo High-Performance Brakes", "Honda Sensing Suite", "Helical Limited-Slip Differential", "Active Rev-Match System"]
+    }
   }
 ];
 
